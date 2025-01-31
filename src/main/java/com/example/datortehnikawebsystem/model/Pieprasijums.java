@@ -1,10 +1,7 @@
 package com.example.datortehnikawebsystem.model;
 
 import com.example.datortehnikawebsystem.paramsEnum.Params;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +23,7 @@ public class Pieprasijums {
 
     private String pamatojums;
 
+    @Enumerated(EnumType.ORDINAL)
     private Params parametri;
 
 }
