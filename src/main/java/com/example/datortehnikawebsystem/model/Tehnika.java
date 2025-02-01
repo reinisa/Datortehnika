@@ -8,8 +8,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Getter
-@Setter
+//@Getter
+//@Setter
 @RequiredArgsConstructor
 @ToString
 
@@ -22,4 +22,27 @@ public class Tehnika {
 
     private String apraksts;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNosaukums() {
+        return nosaukums;
+    }
+
+    public void setNosaukums(String nosaukums) {
+        this.nosaukums = nosaukums;
+    }
+
+    public String getApraksts() {
+        return apraksts;
+    }
+
+    public void setApraksts(String apraksts) {
+        this.apraksts = apraksts;
+    }
 }

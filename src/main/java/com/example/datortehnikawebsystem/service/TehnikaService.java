@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Slf4j
+//@Slf4j
 public class TehnikaService {
 
     private final TehnikaRepository tehnikaRepository;
@@ -18,12 +18,12 @@ public class TehnikaService {
     }
 
     public List<Tehnika> findAll() {
-        log.info("Retreiving all tehnikas");
+//        log.info("Retreiving all tehnikas");
         return tehnikaRepository.findAll();
     }
 
     public Tehnika createTehnika(Tehnika tehnika) {
-        log.info("Creating new tehnika");
+//        log.info("Creating new tehnika");
         return tehnikaRepository.save(tehnika);
     }
 }

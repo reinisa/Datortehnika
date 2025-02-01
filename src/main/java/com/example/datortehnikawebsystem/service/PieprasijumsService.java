@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Slf4j
+//@Slf4j
 public class PieprasijumsService {
 
     private final PieprasijumsRepository pieprasijumsRepository;
@@ -21,29 +21,29 @@ public class PieprasijumsService {
     }
 
     public List<Pieprasijums> findAll() {
-        log.info("Retreiving all pieprasijums");
+//        log.info("Retreiving all pieprasijums");
         return pieprasijumsRepository.findAll();
     }
 
     public Pieprasijums createPieprasijums(Pieprasijums pieprasijums) {
-        log.info("Creating new pieprasijums");
+//        log.info("Creating new pieprasijums");
         return pieprasijumsRepository.save(pieprasijums);
     }
 
     public Pieprasijums findById(Long id) {
-        log.info("Retreiving pieprasijums by id");
+//        log.info("Retreiving pieprasijums by id");
         return pieprasijumsRepository.findById(id).orElse(null);
     }
 
     public Pieprasijums updatePieprasijums(Long id, Status status) {
-        log.info("Updating pieprasijums");
+//        log.info("Updating pieprasijums");
         Pieprasijums pieprasijums = findById(id);
         pieprasijums.setStatus(status);
         return pieprasijumsRepository.save(pieprasijums);
     }
 
     public String deletePieprasijums(Long id) {
-        log.info("Deleting pieprasijums");
+//        log.info("Deleting pieprasijums");
         Pieprasijums pieprasijums = findById(id);
         pieprasijumsRepository.delete(pieprasijums);
         return "Pieprasijums deleted";

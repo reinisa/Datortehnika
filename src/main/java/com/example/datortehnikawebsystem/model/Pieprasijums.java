@@ -9,9 +9,8 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
-
+//@Getter
+//@Setter
 public class Pieprasijums {
     @Id
     private Long id;
@@ -29,4 +28,52 @@ public class Pieprasijums {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Tehnika getTehnika() {
+        return tehnika;
+    }
+
+    public void setTehnika(Tehnika tehnika) {
+        this.tehnika = tehnika;
+    }
+
+    public LocalDateTime getDatums() {
+        return datums;
+    }
+
+    public void setDatums(LocalDateTime datums) {
+        this.datums = datums;
+    }
+
+    public String getPamatojums() {
+        return pamatojums;
+    }
+
+    public void setPamatojums(String pamatojums) {
+        this.pamatojums = pamatojums;
+    }
+
+    public Params getParametri() {
+        return parametri;
+    }
+
+    public void setParametri(Params parametri) {
+        this.parametri = parametri;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }
