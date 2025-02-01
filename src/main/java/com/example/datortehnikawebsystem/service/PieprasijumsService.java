@@ -20,10 +20,12 @@ public class PieprasijumsService {
     }
 
     public List<Pieprasijums> findAll() {
+        log.info("Retreiving all pieprasijums");
         return pieprasijumsRepository.findAll();
     }
 
     public Pieprasijums createPieprasijums(Pieprasijums pieprasijums) {
+        log.info("Creating new pieprasijums");
         return pieprasijumsRepository.save(pieprasijums);
     }
 }

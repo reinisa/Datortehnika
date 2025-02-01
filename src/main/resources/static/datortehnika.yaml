@@ -1,0 +1,104 @@
+openapi: 3.0.2
+info:
+  title: Pieprasijums datortehnika API
+  description: API definitions for Pieprasijums logic
+  version: 0.0.5
+  contact:
+    email: reinisantons02@gmail.com
+
+servers:
+  - url: 'http://localhost:8686/'
+
+paths:
+  /api/tehnika/createTehnika:
+    post:
+      summary: Create a new Tehnika
+      operationId: createTehnika
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Tehnika"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tehnika"
+
+  /api/pieprasijums/createPieprasijums:
+    post:
+      summary: Create a new Pieprasijums
+      operationId: createPieprasijums
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Pieprasijums"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pieprasijums"
+
+  /api/tehnika/getAllPieprasijums:
+    get:
+      summary: Retreive all Pieprasijums
+      operationId: findAllPieprasijums
+      responses:
+        "201":
+          description: Retreived all pieprasijums
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pieprasijums"
+
+  /api/tehnika/getAllTehnika:
+    get:
+      summary: Retreive all Tehnika
+      operationId: findAllTehnika
+      responses:
+        "201":
+          description: Retreived all tehnika
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tehnika"
+
+components:
+  schemas:
+    Tehnika:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        nosaukums:
+          type: string
+        apraksts:
+          type: string
+
+    Pieprasijums:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        tehnika:
+          $ref: "#/components/schemas/Tehnika"
+        datums:
+          type: string
+          format: date-time
+        pamatojums:
+          type: string
+        parametri:
+          type: string
+          enum:
+            - LIETOTS
+            - MAZLIETOTS
+            - JAUNS

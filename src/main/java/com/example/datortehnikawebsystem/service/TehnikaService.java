@@ -18,10 +18,12 @@ public class TehnikaService {
     }
 
     public List<Tehnika> findAll() {
+        log.info("Retreiving all tehnikas");
         return tehnikaRepository.findAll();
     }
 
     public Tehnika createTehnika(Tehnika tehnika) {
+        log.info("Creating new tehnika");
         return tehnikaRepository.save(tehnika);
     }
 }

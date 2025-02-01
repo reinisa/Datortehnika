@@ -5,7 +5,6 @@ import com.example.datortehnikawebsystem.service.TehnikaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -23,6 +22,7 @@ public class TehnikaController {
         return ResponseEntity.ok(tehnikaService.findAll());
     }
 
+//    @Override
     @PostMapping("/createTehnika")
     public ResponseEntity<Tehnika> createTehnika(@RequestBody Tehnika tehnika) {
         Tehnika saglabataisTehnika = tehnikaService.createTehnika(tehnika);

@@ -1,9 +1,8 @@
 package com.example.datortehnikawebsystem.controller;
 
+
 import com.example.datortehnikawebsystem.model.Pieprasijums;
-import com.example.datortehnikawebsystem.model.Tehnika;
 import com.example.datortehnikawebsystem.service.PieprasijumsService;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
