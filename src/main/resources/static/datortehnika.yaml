@@ -70,6 +70,52 @@ paths:
               schema:
                 $ref: "#/components/schemas/Tehnika"
 
+  /api/pieprasijums/updatePieprasijums/{pieprasijumsId}/{status}:
+    put:
+      summary: Update status for pieprasijums
+      parameters:
+        - name: pieprasijumsId
+          in: path
+          required: true
+          description: Id of pieprasijums
+          schema:
+            type: integer
+            format: int64
+        - name: status
+          in: path
+          required: true
+          description: Status pieprasijums
+          schema:
+            type: boolean
+      operationId: updatePieprasijums
+      responses:
+        "201":
+          description: Updated status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pieprasijums"
+
+  /api/pieprasijums/deletePieprasijums/{pieprasijumsId}:
+    delete:
+      summary: Delete pieprasijums
+      parameters:
+        - name: pieprasijumsId
+          in: path
+          required: true
+          description: Id of pieprasijums
+          schema:
+            type: integer
+            format: int64
+      operationId: deletePieprasijums
+      responses:
+        "201":
+          description: Deleted pieprasijums
+          content:
+            application/json:
+              schema:
+                type: string
+
 components:
   schemas:
     Tehnika:
@@ -102,3 +148,9 @@ components:
             - LIETOTS
             - MAZLIETOTS
             - JAUNS
+        status:
+          type: string
+          enum:
+            - IESNIEGTS
+            - APSTIPRINATS
+            - NORAIDITS

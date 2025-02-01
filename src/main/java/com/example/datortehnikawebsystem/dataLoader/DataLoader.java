@@ -3,6 +3,7 @@ package com.example.datortehnikawebsystem.dataLoader;
 import com.example.datortehnikawebsystem.model.Pieprasijums;
 import com.example.datortehnikawebsystem.model.Tehnika;
 import com.example.datortehnikawebsystem.paramsEnum.Params;
+import com.example.datortehnikawebsystem.paramsEnum.Status;
 import com.example.datortehnikawebsystem.repository.PieprasijumsRepository;
 import com.example.datortehnikawebsystem.repository.TehnikaRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -43,6 +44,7 @@ public class DataLoader implements CommandLineRunner {
         pieprasijums1.setDatums(LocalDateTime.now());
         pieprasijums1.setPamatojums("Reason for Pieprasijums 1");
         pieprasijums1.setParametri(Params.LIETOTS);
+        pieprasijums1.setStatus(Status.IESNIEGTS);
         pieprasijumsRepository.save(pieprasijums1);
 
         Pieprasijums pieprasijums2 = new Pieprasijums();
@@ -51,6 +53,7 @@ public class DataLoader implements CommandLineRunner {
         pieprasijums2.setDatums(LocalDateTime.now().plusDays(1));
         pieprasijums2.setPamatojums("Reason for Pieprasijums 2");
         pieprasijums2.setParametri(Params.MAZLIETOTS);
+        pieprasijums2.setStatus(Status.IESNIEGTS);
         pieprasijumsRepository.save(pieprasijums2);
     }
 }

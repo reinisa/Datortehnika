@@ -1,6 +1,7 @@
 package com.example.datortehnikawebsystem.model;
 
 import com.example.datortehnikawebsystem.paramsEnum.Params;
+import com.example.datortehnikawebsystem.paramsEnum.Status;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,4 +27,6 @@ public class Pieprasijums {
     @Enumerated(EnumType.ORDINAL)
     private Params parametri;
 
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface PieprasijumsRepository extends JpaRepository<Pieprasijums, Long> {
     List<Pieprasijums> findAll();
+    Pieprasijums findById(long id);
 }

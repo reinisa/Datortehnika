@@ -2,6 +2,7 @@ package com.example.datortehnikawebsystem.controller;
 
 
 import com.example.datortehnikawebsystem.model.Pieprasijums;
+import com.example.datortehnikawebsystem.paramsEnum.Status;
 import com.example.datortehnikawebsystem.service.PieprasijumsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,5 +30,19 @@ public class PieprasijumsController {
         pieprasijums.setDatums(LocalDateTime.now());
         Pieprasijums saglabataisPieprasijums = pieprasijumsService.createPieprasijums(pieprasijums);
         return ResponseEntity.ok(saglabataisPieprasijums);
+    }
+
+    @PutMapping("/updatePieprasijums/{pieprasijumsId}/{status}")
+    public ResponseEntity<Pieprasijums> updatePieprasijums(@PathVariable Long pieprasijumsId, @PathVariable Boolean status) {
+        if (status) {
+            return ResponseEntity.ok(pieprasijumsService.updatePieprasijums(pieprasijumsId, Status.APSTIPRINATS));
+        } else {
+            return ResponseEntity.ok(pieprasijumsService.updatePieprasijums(pieprasijumsId, Status.NORAIDITS));
+        }
+    }
+
+    @DeleteMapping("/deletePieprasijums/{pieprasijumsId}")
+    public ResponseEntity<String> deletePieprasijums(@PathVariable Long pieprasijumsId) {
+        return ResponseEntity.ok(pieprasijumsService.deletePieprasijums(pieprasijumsId));
     }
 }

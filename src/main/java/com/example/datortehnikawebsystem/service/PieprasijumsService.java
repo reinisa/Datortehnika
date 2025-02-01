@@ -2,6 +2,7 @@ package com.example.datortehnikawebsystem.service;
 
 import com.example.datortehnikawebsystem.model.Pieprasijums;
 import com.example.datortehnikawebsystem.model.Tehnika;
+import com.example.datortehnikawebsystem.paramsEnum.Status;
 import com.example.datortehnikawebsystem.repository.PieprasijumsRepository;
 import com.example.datortehnikawebsystem.repository.TehnikaRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -27,5 +28,24 @@ public class PieprasijumsService {
     public Pieprasijums createPieprasijums(Pieprasijums pieprasijums) {
         log.info("Creating new pieprasijums");
         return pieprasijumsRepository.save(pieprasijums);
+    }
+
+    public Pieprasijums findById(Long id) {
+        log.info("Retreiving pieprasijums by id");
+        return pieprasijumsRepository.findById(id).orElse(null);
+    }
+
+    public Pieprasijums updatePieprasijums(Long id, Status status) {
+        log.info("Updating pieprasijums");
+        Pieprasijums pieprasijums = findById(id);
+        pieprasijums.setStatus(status);
+        return pieprasijumsRepository.save(pieprasijums);
+    }
+
+    public String deletePieprasijums(Long id) {
+        log.info("Deleting pieprasijums");
+        Pieprasijums pieprasijums = findById(id);
+        pieprasijumsRepository.delete(pieprasijums);
+        return "Pieprasijums deleted";
     }
 }
