@@ -23,8 +23,7 @@ public class DataLoader implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
-        // Create Tehnika objects
+    public void run(String... args) {
         Tehnika tehnika1 = new Tehnika();
         tehnika1.setId(1L);
         tehnika1.setNosaukums("Tehnika 1");
@@ -37,7 +36,6 @@ public class DataLoader implements CommandLineRunner {
         tehnika2.setApraksts("Description for Tehnika 2");
         tehnikaRepository.save(tehnika2);
 
-        // Create Pieprasijums (Request) objects
         Pieprasijums pieprasijums1 = new Pieprasijums();
         pieprasijums1.setId(1L);
         pieprasijums1.setTehnika(tehnika1);
