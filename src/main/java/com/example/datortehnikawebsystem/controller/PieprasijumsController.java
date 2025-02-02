@@ -27,8 +27,8 @@ public class PieprasijumsController {
 
     @PostMapping("/createPieprasijums")
     public ResponseEntity<Pieprasijums> createPieprasijums(@RequestBody Pieprasijums pieprasijums) {
-        pieprasijums.setDatums(LocalDateTime.now());
         Pieprasijums saglabataisPieprasijums = pieprasijumsService.createPieprasijums(pieprasijums);
+        saglabataisPieprasijums.setDatums(LocalDateTime.now());
         return ResponseEntity.ok(saglabataisPieprasijums);
     }
 

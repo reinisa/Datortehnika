@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 //@Setter
 public class Pieprasijums {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne

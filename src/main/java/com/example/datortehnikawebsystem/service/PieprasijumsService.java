@@ -6,6 +6,7 @@ import com.example.datortehnikawebsystem.paramsEnum.Status;
 import com.example.datortehnikawebsystem.repository.PieprasijumsRepository;
 import com.example.datortehnikawebsystem.repository.TehnikaRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,7 +27,9 @@ public class PieprasijumsService {
     }
 
     public Pieprasijums createPieprasijums(Pieprasijums pieprasijums) {
-//        log.info("Creating new pieprasijums");
+        if (pieprasijums.getId() != null) {
+            throw new IllegalArgumentException("ID should not be provided when creating a new Pieprasijums.");
+        }
         return pieprasijumsRepository.save(pieprasijums);
     }
 
