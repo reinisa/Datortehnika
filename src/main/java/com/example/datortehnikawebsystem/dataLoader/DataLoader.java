@@ -72,7 +72,7 @@ public class DataLoader implements CommandLineRunner {
 
         Pieprasijums pieprasijums3 = new Pieprasijums();
         pieprasijums3.setTehnika(tehnika3);
-        pieprasijums3.setDatums(LocalDateTime.now().plusDays(1));
+        pieprasijums3.setDatums(LocalDateTime.now().plusDays(2));
         pieprasijums3.setPamatojums("Pamatojums Pieprasijums 3");
         pieprasijums3.setParametri(Params.MAZLIETOTS);
         pieprasijums3.setStatus(Status.IESNIEGTS);
@@ -80,9 +80,9 @@ public class DataLoader implements CommandLineRunner {
 
         Pieprasijums pieprasijums4 = new Pieprasijums();
         pieprasijums4.setTehnika(tehnika2);
-        pieprasijums4.setDatums(LocalDateTime.now().plusDays(1));
+        pieprasijums4.setDatums(LocalDateTime.now());
         pieprasijums4.setPamatojums("Pamatojums Pieprasijums 4");
-        pieprasijums4.setParametri(Params.MAZLIETOTS);
+        pieprasijums4.setParametri(Params.JAUNS);
         pieprasijums4.setStatus(Status.IESNIEGTS);
         pieprasijumsRepository.save(pieprasijums4);
 
@@ -90,13 +90,13 @@ public class DataLoader implements CommandLineRunner {
         pieprasijums5.setTehnika(tehnika4);
         pieprasijums5.setDatums(LocalDateTime.now().plusDays(1));
         pieprasijums5.setPamatojums("Pamatojums Pieprasijums 5");
-        pieprasijums5.setParametri(Params.MAZLIETOTS);
+        pieprasijums5.setParametri(Params.LIETOTS);
         pieprasijums5.setStatus(Status.IESNIEGTS);
         pieprasijumsRepository.save(pieprasijums5);
 
         Pieprasijums pieprasijums6 = new Pieprasijums();
         pieprasijums6.setTehnika(tehnika6);
-        pieprasijums6.setDatums(LocalDateTime.now().plusDays(1));
+        pieprasijums6.setDatums(LocalDateTime.now().plusDays(3));
         pieprasijums6.setPamatojums("Pamatojums Pieprasijums 6");
         pieprasijums6.setParametri(Params.MAZLIETOTS);
         pieprasijums6.setStatus(Status.IESNIEGTS);
@@ -106,29 +106,29 @@ public class DataLoader implements CommandLineRunner {
         pieprasijums7.setTehnika(tehnika5);
         pieprasijums7.setDatums(LocalDateTime.now().plusDays(1));
         pieprasijums7.setPamatojums("Pamatojums Pieprasijums 7");
-        pieprasijums7.setParametri(Params.MAZLIETOTS);
+        pieprasijums7.setParametri(Params.LIETOTS);
         pieprasijums7.setStatus(Status.IESNIEGTS);
         pieprasijumsRepository.save(pieprasijums7);
 
         Pieprasijums pieprasijums8 = new Pieprasijums();
         pieprasijums8.setTehnika(tehnika1);
-        pieprasijums8.setDatums(LocalDateTime.now().plusDays(1));
+        pieprasijums8.setDatums(LocalDateTime.now().minusDays(1));
         pieprasijums8.setPamatojums("Pamatojums Pieprasijums 8");
-        pieprasijums8.setParametri(Params.MAZLIETOTS);
+        pieprasijums8.setParametri(Params.JAUNS);
         pieprasijums8.setStatus(Status.IESNIEGTS);
         pieprasijumsRepository.save(pieprasijums8);
 
         Pieprasijums pieprasijums9 = new Pieprasijums();
         pieprasijums9.setTehnika(tehnika3);
-        pieprasijums9.setDatums(LocalDateTime.now().plusDays(1));
+        pieprasijums9.setDatums(LocalDateTime.now().minusDays(2));
         pieprasijums9.setPamatojums("Pamatojums Pieprasijums 9");
-        pieprasijums9.setParametri(Params.MAZLIETOTS);
+        pieprasijums9.setParametri(Params.JAUNS);
         pieprasijums9.setStatus(Status.IESNIEGTS);
         pieprasijumsRepository.save(pieprasijums9);
 
         Pieprasijums pieprasijums10 = new Pieprasijums();
         pieprasijums10.setTehnika(tehnika5);
-        pieprasijums10.setDatums(LocalDateTime.now().plusDays(1));
+        pieprasijums10.setDatums(LocalDateTime.now().plusDays(4).minusYears(1));
         pieprasijums10.setPamatojums("Pamatojums Pieprasijums 10");
         pieprasijums10.setParametri(Params.MAZLIETOTS);
         pieprasijums10.setStatus(Status.IESNIEGTS);
