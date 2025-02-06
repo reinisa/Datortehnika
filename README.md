@@ -4,13 +4,18 @@
 
 ### Backend Setup
 
+#### **Prerequisites**
+- **Java 17+** installed
+- **IntelliJ IDEA (or any Java supporting IDE)**
+- **SQLite Database Driver** (automatically included in dependencies)
+
 1. **Clone the Backend Repository**
     ```
     git clone https://github.com/reinisa/Datortehnika.git
    
-    cd Datortehnika
+    cd datortehnika-web-system # Navigate to the root directory
     ```
-2. **Build the Project in IntelliJ IDEA (or any IDE)**
+2. **Build the project using Maven**
     ```
     mvn clean install
     ```
@@ -18,28 +23,13 @@
     ```
     Open DatortehnikaWebSystemApplication.java and run it.
    
-    Backend is launched on localhost:8686
+    - The backend will start on `http://localhost:8686`
     ```
-4. **Swagger API Documentation (only available when the backend is running)**
+4. **Swagger API Documentation** (Available when the server is running)
     ```
     http://localhost:8686/swagger-ui/index.html
     ```
-   
-### Frontend Setup
 
-1. **Clone the Frontend Repository**
-    ```
-    git clone https://github.com/reinisa/Datortehnika-UI.git
-   
-    cd Datortehnika-UI
-    ```
-2. **Launch the Frontend in terminal**
-    ```
-    ng serve
-   
-    (Alternatively, can use npm start)
-    ```
-3. **Access the Frontend**
-    ```
-    http://localhost:4200
-    ```
+### **Database Information**
+- **SQLite Database (`datortehnikaDb.db`)**
+- The database is automatically created in the project root directory.
